@@ -1,7 +1,7 @@
 package tests;
 
 import config.DriverManager;
-import config.ManualDriverConfig;
+import config.WebDriverFactory;
 import io.qameta.allure.*;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
@@ -17,7 +17,7 @@ public class LoginTestDemo {
     @BeforeMethod
     public void setup() {
 //        driver = DriverManager.getDriver();
-        driver = ManualDriverConfig.getDriver();
+        driver = WebDriverFactory.getDriver();
         loginPage = new LoginPage(driver);
     }
 
