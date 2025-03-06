@@ -24,4 +24,10 @@ public class WebDriverFactory {
             driver = null;
         }
     }
+
+    public static WebDriver createNewDriver() {
+        WebDriver chromeDriver = new ChromeDriver();
+        chromeDriver.manage().window().maximize();
+        return chromeDriver;
+    }
 }

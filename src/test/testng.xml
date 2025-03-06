@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<suite name="Login Suite">
-    <test name="Demo Login Test">
+<suite name="Demo Test Suite">
+    <test name="Regression Tests" parallel="classes" thread-count="1">
         <classes>
             <class name="tests.LoginTestDemo"/>
         </classes>

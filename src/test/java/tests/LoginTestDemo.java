@@ -1,6 +1,5 @@
 package tests;
 
-import config.DriverManager;
 import config.WebDriverFactory;
 import io.qameta.allure.*;
 import org.openqa.selenium.WebDriver;
@@ -11,14 +10,14 @@ import org.testng.annotations.Test;
 import pages.LoginPage;
 
 public class LoginTestDemo {
-    private static WebDriver driver;
+    private static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
     private static LoginPage loginPage;
 
     @BeforeMethod
     public void setup() {
-//        driver = DriverManager.getDriver();
-        driver = WebDriverFactory.getDriver();
-        loginPage = new LoginPage(driver);
+
+        driver.set(WebDriverFactory.createNewDriver());
+        loginPage = new LoginPage(driver.get());
     }
 
     @Test
@@ -34,7 +33,7 @@ public class LoginTestDemo {
 
     @AfterMethod
     public static void tearDown() {
-        driver.close();
-        DriverManager.quitDriver();
+        driver.get().quit();
+        driver.remove();
     }
 }
