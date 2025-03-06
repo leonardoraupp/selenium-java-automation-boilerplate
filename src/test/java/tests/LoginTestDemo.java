@@ -2,6 +2,7 @@ package tests;
 
 import config.DriverManager;
 import config.ManualDriverConfig;
+import io.qameta.allure.*;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
@@ -21,6 +22,10 @@ public class LoginTestDemo {
     }
 
     @Test
+    @Description("Verify well succeed.")
+    @Severity(SeverityLevel.NORMAL)
+    @Feature("Login")
+    @Story("User logins with valid credentials")
     public void loginTest() {
         loginPage.openLoginPage("https://practicetestautomation.com/practice-test-login/");
         loginPage.login();
