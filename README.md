@@ -1,3 +1,7 @@
+## About
+
+Automation Test project using Selenium, Java, TestNG, Allure Reports. There is a setup for running tests in parallel saving time during the process.
+
 ## Running the tests
 
 ### Clean the target folder (removes the old  test results)
