@@ -1,3 +1,5 @@
+# Boilerplate Test Automation Project Selenium Java ![Documentation Status](https://img.shields.io/badge/docs-in%20progress-yellow)
+
 ## About
 
  Test Automation project using Selenium, Java, TestNG, Allure Reports. There is a setup for running tests in parallel saving time during the process.
